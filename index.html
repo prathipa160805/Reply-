@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You My Friend 💜</title>
+
+<style>
+/* ===== Global Styles ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+
+/* Page container */
+.page {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Show first page */
+#page1 {
+  display: flex;
+}
+
+/* Headings & text */
+h1 {
+  font-size: 26px;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+/* Button */
+button {
+  margin-top: 30px;
+  padding: 14px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #ec4899;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+  animation: pulse 2s infinite;
+}
+
+/* Button pulse */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  bottom: -50px;
+  font-size: 22px;
+  animation: float 6s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Sparkles */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  animation: sparkle 3s infinite;
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(0.5); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== Page 1 ===== -->
+<div class="page" id="page1">
+  <h1>
+    Thanks to everything,<br>
+    my dear friend 💜🌸
+  </h1>
+  <p>Click here to see my soulful words 💖✨</p>
+  <button onclick="openPage2()">Click Here 💌</button>
+</div>
+
+<!-- ===== Page 2 ===== -->
+<div class="page" id="page2">
+  <p>
+    The battle we faced together ⚔️🤝 was not that easy,<br><br>
+
+    but we crossed it together 🌈💪.<br><br>
+
+    The path we both created 🛤️💞 with the help of each other’s guidance ✨🧭<br>
+    means everything to me 💖.<br><br>
+
+    Thank you, my dear friend 🙏💜.<br>
+    I will never leave you in any kind of situation in my life 🤞💫.<br><br>
+
+    There is no person like you 🌟,<br>
+    and no one can ever replace you 💎😍
+  </p>
+</div>
+
+<script>
+/* Page switch */
+function openPage2() {
+  document.getElementById("page1").style.display = "none";
+  document.getElementById("page2").style.display = "flex";
+}
+
+/* Create floating hearts */
+for (let i = 0; i < 18; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+  document.body.appendChild(heart);
+}
+
+/* Create sparkles */
+for (let i = 0; i < 25; i++) {
+  let s = document.createElement("div");
+  s.className = "sparkle";
+  s.style.top = Math.random() * 100 + "vh";
+  s.style.left = Math.random() * 100 + "vw";
+  s.style.animationDelay = Math.random() * 3 + "s";
+  document.body.appendChild(s);
+}
+</script>
+
+</body>
+</html>
